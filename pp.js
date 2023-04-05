@@ -2,6 +2,8 @@
 澎湃新闻自动签到，自动评论
 每天活动海贝，商城兑换实物商品
 
+第一次运行先登录以下，然后将47行注释掉，以免重复登录黑号。
+
 环境变量ppxw
 格式为：手机号&登录密码
 例如：177777777&12345678
@@ -43,7 +45,7 @@ fs.writeFileSync("./cache.json",JSON.stringify(res.data),(err)=>{})
 })
 }
 
-
+//登录一次后注释掉下列内容
 login("https://app.thepaper.cn/userservice/auth/login?loginName="+mobile+"&pwd="+pw+"&nvcVal=")
 console.log("开始登录")
 
