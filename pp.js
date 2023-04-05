@@ -16,8 +16,8 @@ async function sleep(time){
  return await new Promise((resolve) => setTimeout(resolve, time));
 }
 ppxw="15039402683&5332689kfc"  //nodejs直接填在这里即可
-mobile=(ppxw.split("&"))[0];
-pw=(ppxw.split("&"))[1];
+mobile=(process.env.ppxw.split("&"))[0];
+pw=(process.env.ppxw.split("&"))[1];
 
 async function login(url){
 await axios({
