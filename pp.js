@@ -116,7 +116,7 @@ data:data={"contId":contid,"showVote":"0","toPyq":0,"content":comment},
 console.log(res.data)
 
 })
-await sleep(15000)
+
 }
 
 //分享
@@ -127,7 +127,7 @@ function(res){
 console.log(JSON.parse(JSON.stringify(res.data)).integralDoc)
 }
 )
-sleep(5000)
+
 
 }
 
@@ -146,7 +146,7 @@ await axios({
     //post(commentUrl,id,comment)
     share(id)
     })
-await sleep(15000)
+
 }
 
 
@@ -174,7 +174,7 @@ await axios({
     }
     
 })
-sleep(3000)
+
 }
 
 //签到
