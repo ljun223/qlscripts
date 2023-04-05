@@ -167,7 +167,7 @@ await axios({
    console.log(contid)
     len=contid.length;
     for(var j=0; j<=len;j++){
-    while(!contid[j]){j=j+1}
+    while(!contid[j]){j=j+1;break}
     console.log(contid[j])
     sleep(5000)
     //cont(contid[j])
