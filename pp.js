@@ -15,7 +15,7 @@ const notify = require("./sendNotify")
 async function sleep(time){
  return await new Promise((resolve) => setTimeout(resolve, time));
 }
-ppxw="15039402683&5332689kfc"  //nodejs直接填在这里即可
+ppxw=""  //nodejs直接填在这里即可
 mobile=(process.env.ppxw.split("&"))[0];
 pw=(process.env.ppxw.split("&"))[1];
 
