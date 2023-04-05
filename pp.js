@@ -207,7 +207,7 @@ console.log("当前共有："+json.seashellInfo.totalSeashells+"海贝");
 for (var i=0;i<=5;i++){
 log="今日已完成\n"+json.taskInfos[i].title+"："+json.taskInfos[i].curSeashells+"/"+json.taskInfos[i].maxSeashells+"\n"
 console.log(log)
-notify.sendNotify(log)
+notify.sendNotify("澎湃新闻",log)
 }
 })
 
