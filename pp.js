@@ -11,9 +11,11 @@ const $ = new Env("澎湃新闻")
 */
 const axios = require("axios");
 const fs = require("fs");
-const notify = require("./sendNotify")
-
-ppxw=""  //nodejs直接填在这里即可
+//const notify = require("./sendNotify")
+async function sleep(time){
+ return await new Promise((resolve) => setTimeout(resolve, time));
+}
+ppxw="15039402683&5332689kfc"  //nodejs直接填在这里即可
 mobile=(ppxw.split("&"))[0];
 pw=(ppxw.split("&"))[1];
 
@@ -41,16 +43,22 @@ fs.writeFileSync("./cache.json",JSON.stringify(res.data),(err)=>{})
 })
 }
 
-cache=fs.readFileSync("./cache.json","utf-8");
-if(!cache){
+
+/*
+while(!fs.existsSync("./cache.json")){
+
+
 login("https://app.thepaper.cn/userservice/auth/login?loginName="+mobile+"&pwd="+pw+"&nvcVal=")
+console.log("开始登录")
+
 }
+*/
+
 json=JSON.parse(fs.readFileSync("./cache.json","utf-8"));
 userId=json.userInfo.userId;
 token=json.userInfo.token;
 h5Token=json.userInfo.h5Token;
 console.log(token)
-
 
 
 
@@ -116,6 +124,19 @@ console.log(res.data)
 await sleep(15000)
 }
 
+//分享
+
+async function share(id){
+await axios.get("https://app.thepaper.cn/clt/v3/shareLog.msp?weiboType=WEIXIN&shareType=3&objectType=1&objectId="+id,{headers:headers}).then(
+function(res){
+console.log(JSON.parse(JSON.stringify(res.data)).integralDoc)
+}
+)
+sleep(5000)
+
+}
+
+
 
 async function cont(id){
 await axios({
@@ -127,7 +148,8 @@ await axios({
     console.log(res.data)
     comment=JSON.parse(JSON.stringify(res.data)).data.nowList.list[0].content;
     console.log(comment)
-    post(commentUrl,id,comment)
+    //post(commentUrl,id,comment)
+    share(id)
     })
 await sleep(15000)
 }
