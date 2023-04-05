@@ -11,7 +11,7 @@ const $ = new Env("澎湃新闻")
 */
 const axios = require("axios");
 const fs = require("fs");
-//const notify = require("./sendNotify")
+const notify = require("./sendNotify")
 async function sleep(time){
  return await new Promise((resolve) => setTimeout(resolve, time));
 }
