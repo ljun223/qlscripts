@@ -44,15 +44,10 @@ fs.writeFileSync("./cache.json",JSON.stringify(res.data),(err)=>{})
 }
 
 
-/*
-while(!fs.existsSync("./cache.json")){
-
-
 login("https://app.thepaper.cn/userservice/auth/login?loginName="+mobile+"&pwd="+pw+"&nvcVal=")
 console.log("开始登录")
 
-}
-*/
+
 
 json=JSON.parse(fs.readFileSync("./cache.json","utf-8"));
 userId=json.userInfo.userId;
