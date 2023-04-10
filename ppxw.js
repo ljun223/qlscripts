@@ -250,7 +250,7 @@ async function checkin(url) {
       "sec-fetch-site": "same-origin",
       "sec-fetch-mode": "cors",
       "sec-fetch-dest": "empty",
-      "referer": "https://credits.codeboxes.cn/c/p/9rqr1wtq?cuk=",
+      "referer": "https://credits.codeboxes.cn/c/p/9rqr1wtq?"+cuk,
       "cookie": cuk
     },
   }).then(function(res) {
