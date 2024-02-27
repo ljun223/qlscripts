@@ -1,6 +1,6 @@
 ##epic每日提醒
 ##cron:0 23 * * 5
-##$ =new Env("epic games")
+##$ =new Env("epic每日提醒")
 
 import json
 import requests
