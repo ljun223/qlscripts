@@ -1,3 +1,6 @@
+##epic每日提醒
+##cron:0 23 * * 5
+
 import json
 import requests
 from datetime import datetime
