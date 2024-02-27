@@ -1,6 +1,6 @@
 ##epic每日提醒
 ##cron:0 23 * * 5
-##$ =new Env("epic每日提醒")
+##$ =new Env("epic每周限免")
 
 import json
 import requests
