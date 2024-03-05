@@ -1,5 +1,7 @@
 # -*- coding: utf8 -*-
-#
+#cron: 21 5 * * *
+#$ = new Env("贴吧签到")
+
 import os
 import time
 import notify
