@@ -7,7 +7,6 @@ import requests
 from datetime import datetime
 import notify
 import markdown
-import os
 
 
 def get_free_games() -> dict:
@@ -85,8 +84,9 @@ def generate_markdown(games: dict, filename: str):
 
 '''
 
-    with open(filename, 'w') as f:
-        f.write(content)
+    content = markdown.markdown(content)
+    ##print(content)
+    notify.send("epic限免领取",content)
    
 
 if __name__ == '__main__':
@@ -94,9 +94,3 @@ if __name__ == '__main__':
     generate_json(games, './epic_free_games.json')
     generate_markdown(games, './README.md')
     
-with open('README.md','r',encoding='utf-8') as file:
-    content = file.read()
-    content = markdown.markdown(content)
-    ##print(content)
-    notify.send("epic限免领取",content)
-os.system("rm README.md epic_free_games.json")
