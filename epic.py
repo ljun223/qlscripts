@@ -34,13 +34,13 @@ def get_free_games() -> dict:
     return games
 
 
-def generate_json(games: dict, filename: str):
-    with open(filename, 'w') as f:
-        json.dump(games, f)
-        # json.dump(obj=games, fp=f, ensure_ascii=False, indent=4)
+#def generate_json(games: dict, filename: str):
+#    with open(filename, 'w') as f:
+#        json.dump(games, f)
+#        json.dump(obj=games, fp=f, ensure_ascii=False, indent=4)
 
 
-def generate_markdown(games: dict, filename: str):
+def generate_markdown(games: dict):
     images = {}
     data = games['free_now'] + games['free_next']
     for game in data:
@@ -91,6 +91,6 @@ def generate_markdown(games: dict, filename: str):
 
 if __name__ == '__main__':
     games = get_free_games()
-    generate_json(games, './epic_free_games.json')
-    generate_markdown(games, './README.md')
+    #generate_json(games, './epic_free_games.json')
+    generate_markdown(games)
     
